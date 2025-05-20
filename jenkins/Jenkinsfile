@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Code') {
+            steps {
+                git 'https://github.com/Jaideep-tech/-aws-devops-ci-cd-project.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    sh 'docker build -t devops-project:latest ./docker'
+                }
+            }
+        }
+
+        stage('Run Container') {
+            steps {
+                script {
+                    sh 'docker run -d -p 80:80 devops-project:latest'
+                }
+            }
+        }
+
+        stage('Deploy via Ansible') {
+            steps {
+                script {
+                    sh 'ansible-playbook -i ansible/inventory.ini ansible/site.yml'
+                }
+            }
+        }
+    }
+}
