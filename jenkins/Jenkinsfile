@@ -31,5 +31,12 @@ pipeline {
                 }
             }
         }
+
+        
+        stage('Unit Testing') {
+            steps {
+                sh 'python3 -m unittest discover tests'
+            }
+        }
     }
 }
