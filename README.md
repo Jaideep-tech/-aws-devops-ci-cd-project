@@ -66,3 +66,5 @@ aws-devops-ci-cd-project/
 
 - 🔗 [LinkedIn](https://www.linkedin.com/in/jaideep-tonk-1267b91ba/)
 - 💻 [GitHub](https://github.com/Jaideep-tech)
+- 📧 Available on request
+
